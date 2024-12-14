@@ -32,7 +32,7 @@ function createCards(res) {
                     <h5 class="card-title">${producto.title}</h5>
                     <h6>${producto.category}</h6>
                     <p class="card-text text-truncate" style="max-height: 4rem;">${producto.description}</p>
-                    <a href="#" class="btn btn-primary">Ver màs</a>
+                    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal" onclick="muestraProductosDetalles('${producto.id}')">Ver más</a>
                 </div>
             </div>
             `
@@ -40,5 +40,19 @@ function createCards(res) {
     });
 }
 
+function muestraProductosDetalles(productId) {
+    fetch(`${URLMain}/${productId}`)
+        .then((response) => response.json())
+        .then((producto) => {
+            document.getElementById("modalProductoImagen").src = producto.image;
+            document.getElementById("modalProductoTitulo").innerText = producto.title;
+            document.getElementById("modalProductoCategoria").innerText = producto.category;
+            document.getElementById("modalProductoDescripcion").innerText = producto.description;
+            document.getElementById("modalProductoPrecio").innerText = `$${producto.price}`;
+        })
+        .catch((err) => {
+            console.log("Error cargando productos", err);
+        });
+}
 
 getData();

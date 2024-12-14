@@ -16,6 +16,31 @@
         <div id="divProductos" class="d-flex flex-wrap gap-3 justify-content-center">
         </div>
 
+        
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+              <div class="d-flex justify-content-center">
+                  <img id="modalProductoImagen" src="" alt="Sin imagen" class="img-fluid mb-3" style="max-width: 200px; max-height: 200px;">
+              </div>
+                <h5 id="modalProductoTitulo"></h5>
+                <h6 id="modalProductoCategoria"></h6>
+                <p id="modalProductoDescripcion"></p>
+                <p><strong>Precio:</strong> <span id="modalProductoPrecio"></span></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./js/mainProductos.js"></script>
   </body>
 </html>
